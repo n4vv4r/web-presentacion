@@ -3,29 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil | NavSMX</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.png" type="image/png" sizes="64x64">
-
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <title>Roger's Portfolio</title>
+    <link rel="icon" type="image/png" href="puffer-fish.png">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: 'JetBrains Mono', monospace;
+        html {
+            scroll-behavior: smooth;
+        }
+        .profile-card {
+            transition: transform 0.5s ease-in-out;
+        }
+        .projects-section, .donate-section, .others-section {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .projects-section.visible, .donate-section.visible, .others-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .crypto-address {
+            font-family: monospace;
+            word-break: break-all;
         }
     </style>
 </head>
-<body>
-    <div class="card">
-        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
-        <h2 class="username">@n4vv4r</h2>
-        <p class="description">Me llamo Roger, tengo 19 años.<br>Actualmente estudio y también aprendo por cuenta propia<br>Me gusta la programación, ciberseguridad, y el espacio.<br>Esta web es para presentar mis proyectos de programación ;)</p>
-        <div class="social-buttons">
-            <a href="https://x.com/rogerite" class="social-btn glow-on-hover"><img src="twitter.png" alt="Twitter"></a>
-            <a href="https://github.com/n4vv4r" class="social-btn glow-on-hover"><img src="github.png" alt="GitHub"></a>
-            <a href="https://instagram.com/__naavarroo._" class="social-btn glow-on-hover"><img src="insta.gif" alt="Instagram"></a>
+<body class="bg-gray-100 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-blue-600 text-white p-4 fixed w-full top-0 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">RogerSMX</div>
+            <div class="space-x-4">
+                <a href="#donate" id="donateLink" class="hover:text-gray-200">Donate</a>
+                <a href="#others" id="othersLink" class="hover:text-gray-200">Others</a>
+                <a href="#projects" id="projectsLink" class="hover:text-gray-200">Projects</a>
+            </div>
         </div>
-        <button class="projects-btn glow-on-hover" onclick="viewProjects()">Ver mis proyectos</button>
-    </div>
-    <script src="script.js"></script>
+    </nav>
+
+    <!-- Profile Card -->
+    <section class="min-h-screen flex items-center justify-center pt-16">
+        <div class="profile-card bg-white p-8 rounded-lg shadow-lg max-w-md text-center">
+            <img src="https://i.pinimg.com/736x/6d/25/36/6d2536ac5eabbafe049b039390dc510e.jpg" alt="Profile Picture (me and my girl btw)" class="w-32 h-32 rounded-full mx-auto mb-4">
+            <h1 class="text-2xl font-bold mb-2">@rogeriite</h1>
+            <p class="text-gray-600 mb-4">I love developing in C, PHP and Rust. I'm a beginner in software programming but we all start somewhere ;)<br>This website has been done in pure HTML btw!</p>
+            <div class="flex justify-center space-x-2 mb-4">
+                <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">PHP</span>
+                <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">C</span>
+                <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Ruby</span>
+                <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">inux</span>
+                <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">BSD</span>
+                <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">TypeScript</span>
+
+            </div>
+            <button id="viewProjectsBtn" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">Take a look!</button>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section py-16 bg-gray-200">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="pinsphp.png" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Project One: PHPins!</h3>
+                        <p class="text-gray-600 mb-4">A web app built with pure PHP and CSS, like a clone of Pinterest but based on X's style and adding new features such as "Tags" ;)</p>
+                        <a href="https://github.com/n4vv4r/php_pins_board_demo" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View on GitHub</a>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="discordbot.png" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Project Two: Discord Bot</h3>
+                        <p class="text-gray-600 mb-4">A Typescript based Discord Bot to interact with people. Enhancing social interactions and fun commands and games for the Community..</p>
+                        <a href="https://github.com/n4vv4r/kurei_bot_demo/" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View on GitHub</a>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="kernel.png" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Project Three: My own C kernel!</h3>
+                        <p class="text-gray-600 mb-4">This kernel is still being developed by me. It's purely based on C and Assembly. A kernel is the "brain" of the operating system.</p>
+                        <a href="#" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Still not on GitHub!</a>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="litebag.png" alt="Project 4" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Project Four: Litebag, my own crypto wallet</h3>
+                        <p class="text-gray-600 mb-4">This is my favorite Rust projects that HAS to be here. It's a local software-based crypto wallet for storing and sending Litecoin to people, still on development tho!</p>
+                        <a href="https://github.com/n4vv4r/litebag_ltc_wallet_demo" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section id="donate" class="donate-section py-16 bg-gray-200">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Support My Work</h2>
+            <div class="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
+                <p class="text-gray-600 mb-6 text-center">If you like my projects, consider supporting me with a crypto donation!</p>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Bitcoin (BTC)</h3>
+                        <p class="crypto-address text-gray-700">bc1q8stf7j24ggldg4hz8fm7np3x5t2x8gzwjdk463</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Ethereum (ETH)</h3>
+                        <p class="crypto-address text-gray-700">0x298246511901D8089AAd6cCEf0dabBaDf78fA435</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Litecoin (LTC)</h3>
+                        <p class="crypto-address text-gray-700">ltc1qermz4x48vd79dw3sj03nahuw8hctjfw9zmmy4g</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 mt-6 text-center">Please ensure you send to the correct address. Donations are non-refundable.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Others Section -->
+    <section id="others" class="others-section py-16 bg-gray-200">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Other Ventures</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
+                <!-- Minecraft Server -->
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-xl font-semibold mb-4">My Minecraft Server</h3>
+                    <p class="text-gray-600 mb-4">Join my community-driven Minecraft server! We focus on surviva anarchy gameplay with custom plugins and regular updates. The map won't restart! With 12GB of RAM and 50GB NVMe this server has been online since first week of April 2025.</p>
+                    <div class="space-y-2">
+                        <p><strong>Server IP:</strong> thevoidmc.org</p>
+                        <p><strong>Version:</strong> 1.21</p>
+                        <p><strong>Features:</strong> Active PvP, Hard Survival, Anarchy, Pure Anarchy</p>
+                    </div>
+                    <a href="https://rogersmxcraft.net" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition mt-4 inline-block">Visit Website</a>
+                </div>
+                <!-- Other Websites -->
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-xl font-semibold mb-4">My Other Websites</h3>
+                    <p class="text-gray-600 mb-4">Check out some of my other online projects and communities!</p>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-lg font-medium">This website</h4>
+                            <p class="text-gray-600">My own portfolio to show everyone my projects and maybe i'll add some cool blog later.</p>
+                            <a href="https://www.rogernav.xyz" target="_blank" class="text-blue-600 hover:underline">rogernav.xyz</a>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-medium">Gaming Community</h4>
+                            <p class="text-gray-600">The website for my Minecraft Server and join my Discord server.</p>
+                            <a href="https://www.thevoidmc.org" target="_blank" class="text-blue-600 hover:underline">www.thevoidmc.org</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-blue-600 text-white py-8">
+        <div class="container mx-auto text-center">
+            <h3 class="text-xl font-bold mb-4">Contact Me</h3>
+            <p>Email: rogeriite@protonmail.com</p>
+            <p class="mt-2">Follow me on <a href="https://instagram.com/rogeriite" class="underline">Instagram</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const viewProjectsBtn = document.getElementById('viewProjectsBtn');
+        const projectsSection = document.querySelector('.projects-section');
+        const donateLink = document.getElementById('donateLink');
+        const donateSection = document.querySelector('.donate-section');
+        const othersLink = document.getElementById('othersLink');
+        const othersSection = document.querySelector('.others-section');
+        const projectsLink = document.getElementById('projectsLink');
+    
+        viewProjectsBtn.addEventListener('click', () => {
+            projectsSection.classList.add('visible');
+            projectsSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    
+        donateLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            donateSection.classList.add('visible');
+            donateSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    
+        othersLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            othersSection.classList.add('visible');
+            othersSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    
+        projectsLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            projectsSection.classList.add('visible');
+            projectsSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
