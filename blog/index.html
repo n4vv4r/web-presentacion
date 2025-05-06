@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Roger's Linux Blog</title>
+  <link rel="icon" type="image/png" href="../puffer-fish.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .sidebar {
+      min-height: 100vh;
+    }
+    .tag {
+      background-color: #ebf8ff;
+      color: #2b6cb0;
+      font-size: 0.875rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      margin-right: 0.5rem;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Top Navbar -->
+  <nav class="bg-blue-600 text-white p-4 fixed w-full top-0 z-10">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-2xl font-bold">RogerSMX Blog</div>
+      <div class="space-x-4">
+        <a href="../" class="hover:text-gray-200">Menu</a>
+        <a href="#about" class="hover:text-gray-200">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="flex pt-16">
+    <!-- Sidebar -->
+    <aside class="sidebar w-64 bg-white shadow-lg p-6 hidden md:block">
+      <h2 class="text-xl font-semibold mb-4">Tags</h2>
+      <ul class="space-y-2">
+        <li><a href="#tag-Linux" class="text-blue-600 hover:underline">Linux</a></li>
+        <li><a href="#tag-C" class="text-blue-600 hover:underline">C</a></li>
+        <li><a href="#tag-PHP" class="text-blue-600 hover:underline">PHP</a></li>
+        <li><a href="#tag-Rust" class="text-blue-600 hover:underline">Rust</a></li>
+        <li><a href="#tag-BSD" class="text-blue-600 hover:underline">BSD</a></li>
+        <li><a href="#tag-TypeScript" class="text-blue-600 hover:underline">TypeScript</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 space-y-12">
+
+      <!-- Linux Article -->
+      <article id="tag-Linux" class="bg-white p-6 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-2">Aliases on Linux commands</h1>
+        <div class="mb-4">
+          <span class="tag">Linux</span> <b>@rogeernavarro</b>
+        </div>
+        <p class="text-gray-700 mb-4">
+          Hey there. I'm still learning stuff every day, but I just found something that saves me time when updating my Arch Linux system, and I thought maybe it could help you too.
+        </p>
+        <p class="text-gray-700 mb-4">
+          You know how we always type:
+        </p>
+        <pre class="bg-gray-100 p-4 rounded mb-4 text-sm overflow-x-auto"><code>sudo pacman -Syu</code></pre>
+        <p class="text-gray-700 mb-4">
+          Well, I got tired of writing that long command every time, so I made a quick alias. Here’s how:
+        </p>
+        <pre class="bg-gray-100 p-4 rounded mb-4 text-sm overflow-x-auto"><code>echo "alias update='sudo pacman -Syu'" >> ~/.bashrc
+source ~/.bashrc</code></pre>
+        <p class="text-gray-700">
+          Now I just type <code class="bg-gray-200 px-1 rounded text-sm">update</code> and it handles everything. This works on <code>.zshrc</code> too if you're using zsh.
+        </p>
+      </article>
+
+      <!-- Placeholder for other tags -->
+      <section id="tag-C" class="hidden"></section>
+      <section id="tag-PHP" class="hidden"></section>
+      <section id="tag-Rust" class="hidden"></section>
+      <section id="tag-BSD" class="hidden"></section>
+      <section id="tag-TypeScript" class="hidden"></section>
+
+      <!-- About -->
+      <section id="about" class="bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-xl font-bold mb-2">About This Blog</h2>
+        <p class="text-gray-700">
+          I'm Roger, a student and computers enthusiast, and I made this blog to drop short tricks and tips from what I'm learning. More content is coming, probably about C, BSD, or whatever I break next.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white text-center py-6 mt-8">
+    <p>© 2025 RogerSMX — All rights reserved</p>
+    <p>Contact: rogeriite@protonmail.com</p>
+  </footer>
+
+</body>
+</html>
