@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Roger's Linux Blog</title>
+  <title>Roger's Blog</title>
   <link rel="icon" type="image/png" href="../puffer-fish.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -42,47 +42,108 @@
     <aside class="sidebar w-64 bg-white shadow-lg p-6 hidden md:block">
       <h2 class="text-xl font-semibold mb-4">Tags</h2>
       <ul class="space-y-2">
-        <li><a href="#tag-Linux" class="text-blue-600 hover:underline">Linux (1)</a></li>
+        <li><a href="#tag-Linux" class="text-blue-600 hover:underline">Linux (2)</a></li>
         <li><a href="#tag-C" class="text-blue-600 hover:underline">C</a></li>
-        <li><a href="#tag-PHP" class="text-blue-600 hover:underline">PHP</a></li>
+        <li><a href="#tag-PHP" class="text-blue-600 hover:underline">PHP (1)</a></li>
         <li><a href="#tag-Rust" class="text-blue-600 hover:underline">Rust</a></li>
         <li><a href="#tag-BSD" class="text-blue-600 hover:underline">BSD</a></li>
         <li><a href="#tag-TypeScript" class="text-blue-600 hover:underline">TypeScript</a></li>
+        <li><a href="#tag-iPhone" class="text-blue-600 hover:underline">iPhone (1)</a></li>
+        <li><a href="#tag-Smartphones" class="text-blue-600 hover:underline">Smartphones (1)</a></li>
       </ul>
     </aside>
 
     <!-- Main Content -->
     <main class="flex-1 p-6 space-y-12">
 
-      <!-- Linux Article -->
-      <article id="tag-Linux" class="bg-white p-6 rounded-lg shadow-lg">
-        <h1 class="text-2xl font-bold mb-2">Aliases on Linux commands</h1>
-        <div class="mb-4">
-          <span class="tag">Linux</span> <b>@rogeernavarro</b>
-        </div>
-        <p class="text-gray-700 mb-4">
-          Hey there. I'm still learning stuff every day, but I just found something that saves me time when updating my Arch Linux system, and I thought maybe it could help you too.
-        </p>
-        <p class="text-gray-700 mb-4">
-          You know how we always type:
-        </p>
-        <pre class="bg-gray-100 p-4 rounded mb-4 text-sm overflow-x-auto"><code>sudo pacman -Syu</code></pre>
-        <p class="text-gray-700 mb-4">
-          Well, I got tired of writing that long command every time, so I made a quick alias. Here’s how:
-        </p>
-        <pre class="bg-gray-100 p-4 rounded mb-4 text-sm overflow-x-auto"><code>echo "alias update='sudo pacman -Syu'" >> ~/.bashrc
-source ~/.bashrc</code></pre>
-        <p class="text-gray-700">
-          Now I just type <code class="bg-gray-200 px-1 rounded text-sm">update</code> and it handles everything. This works on <code>.zshrc</code> too if you're using zsh.
-        </p>
-      </article>
+<!-- Linux Article -->
+<article id="tag-Linux" class="bg-white p-6 rounded-lg shadow-lg">
+    <h1 class="text-2xl font-bold mb-2">Aliases on Linux commands</h1>
+    <div class="mb-4">
+      <span class="tag">Linux</span> <b>@rogeernavarro</b>
+    </div>
+    <img src="https://images.unsplash.com/photo-1640552435388-a54879e72b28?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Linux terminal" class="w-32 max-w-full h-auto rounded-lg shadow mb-4">
+    <p class="text-gray-700 mb-4">
+      Hey there. I'm still learning stuff every day, but I just found something that saves me time when updating my Arch Linux system, and I thought maybe it could help you too.
+    </p>
+    <p class="text-gray-700 mb-4">
+      You know how we always type:
+    </p>
+    <pre class="bg-gray-100 p-4 rounded mb-4 text-sm overflow-x-auto"><code>sudo pacman -Syu</code></pre>
+    <p class="text-gray-700 mb-4">
+      Well, I got tired of writing that long command every time, so I made a quick alias. Here’s how:
+    </p>
+    <pre class="bg-gray-100 p-4 rounded mb-4 text-sm overflow-x-auto"><code>echo "alias update='sudo pacman -Syu'" >> ~/.bashrc
+  source ~/.bashrc</code></pre>
+    <p class="text-gray-700">
+      Now I just type <code class="bg-gray-200 px-1 rounded text-sm">update</code> and it handles everything. This works on <code>.zshrc</code> too if you're using zsh.
+    </p>
+  </article>
+<!-- PHP Article (Also tagged as Linux) -->
+<article id="tag-PHP" class="bg-white p-6 rounded-lg shadow-lg">
+    <h1 class="text-2xl font-bold mb-2">Installing PHP on Arch Linux</h1>
+    <div class="mb-4">
+      <span class="tag">PHP</span> <span class="tag">Linux</span> <b>@rogeernavarro</b>
+    </div>
+    <img src="https://images.unsplash.com/photo-1593720216276-0caa6452e004?q=80&w=200" alt="PHP code" class="w-32 max-w-full h-auto rounded-lg shadow mb-4">
+    <p class="text-gray-700 mb-4">
+      So you're on Arch and want to mess with PHP? Maybe for a local test server or to practice backend stuff? Here's how I did it on my own system — super quick and worked fine.
+    </p>
+    <p class="text-gray-700 mb-4">
+      First, update your system (just in case you haven't already):
+    </p>
+    <pre class="bg-gray-100 p-4 rounded mb-4 text-sm overflow-x-auto"><code>sudo pacman -Syu</code></pre>
+    <p class="text-gray-700 mb-4">
+      Then install PHP and some common extras:
+    </p>
+    <pre class="bg-gray-100 p-4 rounded mb-4 text-sm overflow-x-auto"><code>sudo pacman -S php php-apache</code></pre>
+    <p class="text-gray-700 mb-4">
+      If you want to test PHP quickly, just create a simple file like this:
+    </p>
+    <pre class="bg-gray-100 p-4 rounded mb-4 text-sm overflow-x-auto"><code>echo "<?php phpinfo(); ?>" > test.php</code></pre>
+    <p class="text-gray-700 mb-4">
+      Then run the built-in PHP server:
+    </p>
+    <pre class="bg-gray-100 p-4 rounded mb-4 text-sm overflow-x-auto"><code>php -S localhost:8000</code></pre>
+    <p class="text-gray-700">
+      Boom! Open <code class="bg-gray-200 px-1 rounded text-sm">http://localhost:8000/test.php</code> in your browser and you should see PHP info. Easy stuff.
+    </p>
+  </article>
 
+<!-- iPhone Opinion Article -->
+<div id="tag-Smartphones">
+    <article id="tag-iPhone" class="bg-white p-6 rounded-lg shadow-lg">
+      <h1 class="text-2xl font-bold mb-2">The iPhone 17 Air is Thin, but at What Cost?</h1>
+      <div class="mb-4">
+        <span class="tag">iPhone</span> <span class="tag">Smartphones</span> <b>@rogeernavarro</b>
+      </div>
+      <img src="https://tecnofuturo24.com/wp-content/uploads/2025/04/iphone-17pro-concept-1.webp" alt="iPhone" class="w-32 max-w-full h-auto rounded-lg shadow mb-4">
+      <p class="text-gray-700 mb-4">
+
+        Apple's gone crazy with making the iPhone 17 Air super thin, but honestly, is this what anyone actually wants?
+      </p>
+      <p class="text-gray-700 mb-4">
+        Yeah, it looks cool and all, but when your phone dies halfway through the day just to be a bit slimmer, that's not good. Who's begging for this?
+      </p>
+      <p class="text-gray-700 mb-4">
+        The tiny battery is a straight-up result of this obsession with thinness. Instead of giving us better features or a tougher phone, Apple's all about that sleek vibe again.
+      </p>
+      <p class="text-gray-700 mb-4">
+        And they might even bring back those bulky Smart Battery Cases to fix the mess they made. How's that forward-thinking?
+      </p>
+      <p class="text-gray-700">
+        I miss when phones were getting actually better, not just skinnier. Fingers crossed Apple wakes up and lets us pick battery life over looking "fancy".
+      </p>
+    </article>
+  </div>
+
+  
       <!-- Placeholder for other tags -->
       <section id="tag-C" class="hidden"></section>
-      <section id="tag-PHP" class="hidden"></section>
       <section id="tag-Rust" class="hidden"></section>
       <section id="tag-BSD" class="hidden"></section>
       <section id="tag-TypeScript" class="hidden"></section>
+      <section id="tag-Smartphones" class="hidden"></section>
 
       <!-- About -->
       <section id="about" class="bg-white p-6 rounded-lg shadow-lg">
